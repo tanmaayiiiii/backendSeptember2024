@@ -1,3 +1,3 @@
-# chai aur backend series
+# backend
 
 [Model Link]()
