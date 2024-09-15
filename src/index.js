@@ -1,4 +1,4 @@
-// require('dotenv').config({path: './.env'}) //works fine but inconsistent
+// require('dotenv').config({path: './.env'}) //works fine, run hoga,  but inconsistent
 import dotenv from "dotenv"
 import connectDB from "./db/index.js";
 
@@ -8,6 +8,14 @@ dotenv.config({
 
  
 connectDB()
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`Server is running on PORT ${process.env.PORT}`);
+    })
+})
+.catch((err) => {
+    console.log("MONGO DB connection failed !!!", err)
+})
 
 
 
